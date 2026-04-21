@@ -1,12 +1,1034 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My First Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Red Balloon Construction</title>
+  <meta
+    name="description"
+    content="Red Balloon Construction provides multi-discipline commercial construction services from carpentry to fire stopping across Kent to London."
+  />
+  <style>
+    :root {
+      --brand-red: #d9342b;
+      --brand-red-dark: #b92720;
+      --ink: #1f2430;
+      --muted: #666c78;
+      --line: #e7e7ea;
+      --soft: #f4f4f6;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --radius: 18px;
+      --max-width: 1220px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: #efeff2;
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 20px 0 12px;
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .logo-mark {
+      width: 62px;
+      height: 72px;
+      position: relative;
+      flex: 0 0 auto;
+    }
+
+    .logo-mark span {
+      position: absolute;
+      display: block;
+      border: 5px solid #bfc2c9;
+      border-bottom: none;
+      border-right-width: 5px;
+      transform: skewY(-28deg);
+      border-radius: 2px 2px 0 0;
+    }
+
+    .logo-mark .tower-1 {
+      width: 18px;
+      height: 42px;
+      left: 4px;
+      bottom: 6px;
+    }
+
+    .logo-mark .tower-2 {
+      width: 22px;
+      height: 58px;
+      left: 24px;
+      bottom: 6px;
+    }
+
+    .logo-mark .tower-3 {
+      width: 22px;
+      height: 72px;
+      left: 42px;
+      bottom: 6px;
+    }
+
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      left: 8px;
+      bottom: 12px;
+      width: 32px;
+      height: 22px;
+      background: linear-gradient(
+        to bottom,
+        var(--brand-red) 0 28%,
+        transparent 28% 36%,
+        var(--brand-red) 36% 64%,
+        transparent 64% 72%,
+        var(--brand-red) 72% 100%
+      );
+      transform: skewY(-28deg);
+      border-radius: 2px;
+    }
+
+    .brand-text h1 {
+      margin: 0;
+      color: var(--brand-red);
+      font-size: clamp(1.6rem, 3.6vw, 3.2rem);
+      line-height: 0.95;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .brand-text p {
+      margin: 6px 0 0;
+      color: #b7bac1;
+      font-size: clamp(0.82rem, 1.6vw, 1.6rem);
+      text-transform: uppercase;
+      letter-spacing: 0.34em;
+      white-space: nowrap;
+    }
+
+    .contact-strip {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--brand-red);
+      font-size: 0.96rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .contact-strip a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+
+    .nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 34px;
+      padding: 0 0 16px;
+      font-size: 0.98rem;
+      color: #4d5360;
+    }
+
+    .nav-row a {
+      position: relative;
+      padding: 8px 0;
+      transition: color 0.2s ease;
+    }
+
+    .nav-row a:hover,
+    .nav-row a:focus-visible {
+      color: var(--brand-red);
+    }
+
+    .nav-row a:first-child::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--brand-red);
+    }
+
+    .hero {
+      background:
+        linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.86)),
+        linear-gradient(135deg, #f7f7f9, #ececef);
+      padding: 32px 0 20px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.95fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .hero-copy {
+      min-height: 520px;
+      padding: 64px 56px;
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255,255,255,0.83), rgba(255,255,255,0.88)),
+        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80') center/cover;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--brand-red);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .hero-copy h2 {
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 4.6rem);
+      line-height: 0.98;
+      text-transform: uppercase;
+      max-width: 700px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-copy h2 .accent {
+      color: var(--brand-red);
+      display: block;
+      margin-top: 8px;
+    }
+
+    .hero-copy p {
+      max-width: 610px;
+      font-size: 1.28rem;
+      color: #363d49;
+      margin: 26px 0 14px;
+    }
+
+    .hero-copy .subline {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 34px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 190px;
+      padding: 16px 26px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 1rem;
+      border: 2px solid var(--brand-red);
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--brand-red);
+      color: white;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: var(--brand-red-dark);
+      border-color: var(--brand-red-dark);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.92);
+      color: var(--brand-red);
+    }
+
+    .hero-panels {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .service-panel {
+      position: relative;
+      min-height: 250px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      padding: 34px 40px;
+    }
+
+    .service-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(255,255,255,0.93) 0%, rgba(255,255,255,0.75) 48%, rgba(255,255,255,0.25) 100%);
+    }
+
+    .service-panel.fire::before {
+      background: linear-gradient(90deg, rgba(217,52,43,0.92) 0%, rgba(217,52,43,0.78) 52%, rgba(217,52,43,0.25) 100%);
+    }
+
+    .service-panel .panel-content {
+      position: relative;
+      z-index: 1;
+      max-width: 360px;
+    }
+
+    .service-panel h3 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .service-panel p {
+      margin: 0 0 24px;
+      font-size: 1.08rem;
+    }
+
+    .service-panel.construction {
+      background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=80') center/cover;
+    }
+
+    .service-panel.fire {
+      color: white;
+      background: url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1400&q=80') center/cover;
+    }
+
+    .service-panel.fire .btn-secondary {
+      border-color: white;
+      color: var(--brand-red);
+    }
+
+    .features {
+      background: #f2f2f4;
+      padding: 26px 0 18px;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      background: transparent;
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      padding: 18px 24px;
+      border-right: 1px solid #d9d9df;
+    }
+
+    .feature:last-child {
+      border-right: 0;
+    }
+
+    .feature-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background: rgba(217, 52, 43, 0.08);
+      color: var(--brand-red);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .feature h4 {
+      margin: 0 0 6px;
+      font-size: 1.02rem;
+      line-height: 1.2;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .section {
+      padding: 64px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .section-heading p {
+      margin: 0 auto;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    .about-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 34px;
+    }
+
+    .about-card p {
+      color: #48505d;
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+    }
+
+    .about-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .about-list li {
+      background: #f6f6f8;
+      border: 1px solid #ececf0;
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-weight: 600;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px 22px;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--brand-red);
+    }
+
+    .service-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.18rem;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .accreditations {
+      background: #f6f6f7;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .logo-row {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .logo-chip {
+      background: white;
+      border-radius: 16px;
+      padding: 22px 12px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      min-height: 110px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .logo-chip strong {
+      display: block;
+      font-size: 1.3rem;
+      color: #3c4350;
+    }
+
+    .logo-chip span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .logo-chip.red strong,
+    .logo-chip.red span {
+      color: var(--brand-red);
+    }
+
+    .contact-section {
+      background: linear-gradient(135deg, #222833, #161b24);
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .contact-card,
+    .contact-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 32px;
+    }
+
+    .contact-card h2,
+    .contact-box h3 {
+      margin-top: 0;
+    }
+
+    .contact-card p,
+    .contact-box p,
+    .contact-box li {
+      color: rgba(255,255,255,0.82);
+    }
+
+    .contact-points {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .contact-point {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+      font-weight: 600;
+    }
+
+    .contact-point small {
+      display: block;
+      color: rgba(255,255,255,0.58);
+      font-size: 0.84rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .contact-box ul {
+      margin: 18px 0 0;
+      padding-left: 18px;
+    }
+
+    .site-footer {
+      background: #11151c;
+      color: rgba(255,255,255,0.72);
+      padding: 20px 0;
+      font-size: 0.92rem;
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1120px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feature {
+        border-right: 0;
+        border-bottom: 1px solid #d9d9df;
+      }
+
+      .feature:nth-last-child(-n+1) {
+        border-bottom: 0;
+      }
+
+      .logo-row {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 840px) {
+      .topbar,
+      .nav-row {
+        flex-direction: column;
+      }
+
+      .branding {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .contact-strip {
+        justify-content: center;
+      }
+
+      .nav-row {
+        gap: 18px;
+        flex-wrap: wrap;
+        padding-bottom: 14px;
+      }
+
+      .hero-copy {
+        padding: 42px 28px;
+        min-height: auto;
+      }
+
+      .hero-copy p {
+        font-size: 1.08rem;
+      }
+
+      .services-grid,
+      .feature-grid,
+      .logo-row {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        padding: 20px 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(var(--max-width), calc(100% - 20px));
+      }
+
+      .brand-text h1 {
+        white-space: normal;
+      }
+
+      .brand-text p {
+        letter-spacing: 0.2em;
+        white-space: normal;
+      }
+
+      .button-row {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .service-panel {
+        padding: 26px 24px;
+      }
+
+      .about-card,
+      .contact-card,
+      .contact-box {
+        padding: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header class="site-header">
+    <div class="container">
+      <div class="topbar">
+        <a class="branding" href="#home" aria-label="Red Balloon Construction home">
+          <div class="logo-mark" aria-hidden="true">
+            <span class="tower-1"></span>
+            <span class="tower-2"></span>
+            <span class="tower-3"></span>
+          </div>
+          <div class="brand-text">
+            <h1>Red Balloon</h1>
+            <p>Construction</p>
+          </div>
+        </a>
 
-  <h1>Hello, this is my website 👋</h1>
-  <p>This is my first page.</p>
+        <div class="contact-strip">
+          <a href="mailto:info@redballoonconstruction.com">✉ info@redballoonconstruction.com</a>
+          <a href="#contact">☎ Add your phone number</a>
+        </div>
+      </div>
 
+      <nav class="nav-row" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#accreditations">Accreditations</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Commercial construction specialists</span>
+            <h2>
+              Multi-discipline construction services,
+              <span class="accent">from carpentry to fire stopping</span>
+            </h2>
+            <p>
+              Red Balloon Construction delivers high quality workmanship across a wide range of commercial projects.
+            </p>
+            <p class="subline">
+              Friendly, reliable and safety-focused service for businesses across Kent to London.
+            </p>
+
+            <div class="button-row">
+              <a class="btn btn-primary" href="#contact">Get a Quote →</a>
+              <a class="btn btn-secondary" href="#services">Our Services →</a>
+            </div>
+          </div>
+
+          <div class="hero-panels">
+            <article class="service-panel construction">
+              <div class="panel-content">
+                <h3>Construction</h3>
+                <p>Experienced in renovation, fit-out and general commercial construction works.</p>
+                <a class="btn btn-secondary" href="#services">Learn More →</a>
+              </div>
+            </article>
+
+            <article class="service-panel fire">
+              <div class="panel-content">
+                <h3>Passive Fire Protection</h3>
+                <p>Specialists in fire stopping, compartmentation and compliance-led installation work.</p>
+                <a class="btn btn-secondary" href="#services">Learn More →</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">👥</div>
+            <div>
+              <h4>Multi-Discipline Experts</h4>
+              <p>Skilled across a broad range of commercial construction trades.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🛡</div>
+            <div>
+              <h4>Quality &amp; Safety First</h4>
+              <p>Committed to high standards, safe methods and dependable delivery.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🤝</div>
+            <div>
+              <h4>Reliable &amp; Professional</h4>
+              <p>Friendly service, clear communication and practical project support.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">📍</div>
+            <div>
+              <h4>Covering Kent to London</h4>
+              <p>Proudly supporting commercial clients throughout the South East.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🏢</div>
+            <div>
+              <h4>Commercial Specialists</h4>
+              <p>Trusted support for businesses, contractors, facilities and sites.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">About Red Balloon Construction</span>
+          <h2>Built Around Quality, Safety and Service</h2>
+          <p>
+            Red Balloon Construction provides friendly, dependable multi-discipline support for commercial clients,
+            combining practical site experience with a professional approach from first enquiry to final handover.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <p>
+              We work across a variety of commercial environments, delivering construction services with a strong focus on workmanship,
+              responsiveness and safe delivery.
+            </p>
+            <p>
+              From carpentry and general building works to specialist passive fire protection and fire stopping, we help clients complete projects
+              to a high standard with clear communication and a flexible attitude.
+            </p>
+            <p>
+              Whether you need support on refurbishment works, planned maintenance or compliance-led fire stopping packages, Red Balloon Construction
+              brings a straightforward and reliable service across Kent to London.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <h3>What clients can expect</h3>
+            <ul class="about-list">
+              <li>Professional support for commercial projects of different sizes</li>
+              <li>Friendly service and a practical approach on site</li>
+              <li>Strong attention to safety, detail and finish quality</li>
+              <li>Flexible multi-trade capability from carpentry to fire stopping</li>
+              <li>Coverage across Kent, Greater London and surrounding areas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Our Services</span>
+          <h2>Commercial Construction Services</h2>
+          <p>
+            A strong core offering for commercial clients, with room to expand as your website grows.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Carpentry</h3>
+            <p>First and second fix carpentry, internal fit-out work and practical site support.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Passive Fire Protection</h3>
+            <p>Fire stopping solutions focused on compartmentation, penetration sealing and compliance.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>General Construction</h3>
+            <p>Reliable support across renovation, refurbishment and wider building works.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Commercial Refurbishment</h3>
+            <p>Practical improvements and updates for commercial interiors and occupied spaces.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Maintenance Works</h3>
+            <p>Responsive building maintenance and small works support for commercial premises.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Repairs &amp; Finishing</h3>
+            <p>Attention to detail across repair work, finishing trades and final presentation.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Site Support</h3>
+            <p>Flexible labour and skilled trade support to keep projects moving efficiently.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Bespoke Project Support</h3>
+            <p>Tailored commercial construction input shaped around client and site requirements.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section accreditations" id="accreditations">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Accreditations</span>
+          <h2>Trusted Standards</h2>
+          <p>
+            Use this row to reflect the professional standards and recognised certifications that support your work.
+          </p>
+        </div>
+
+        <div class="logo-row">
+          <div class="logo-chip red">
+            <strong>CHAS</strong>
+            <span>Accredited</span>
+          </div>
+          <div class="logo-chip">
+            <strong>SafeContractor</strong>
+            <span>Approved</span>
+          </div>
+          <div class="logo-chip">
+            <strong>BM TRADA</strong>
+            <span>Certified</span>
+          </div>
+          <div class="logo-chip">
+            <strong>IPAF</strong>
+            <span>Member</span>
+          </div>
+          <div class="logo-chip">
+            <strong>CSCS</strong>
+            <span>Qualified</span>
+          </div>
+          <div class="logo-chip">
+            <strong>Envirograf</strong>
+            <span>Fire Systems</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <span class="eyebrow">Contact Us</span>
+            <h2>Talk to Red Balloon Construction</h2>
+            <p>
+              If you need dependable commercial construction support, get in touch to discuss your project, site requirements or quote request.
+            </p>
+
+            <div class="contact-points">
+              <div class="contact-point">
+                <small>Email</small>
+                <a href="mailto:info@redballoonconstruction.com">info@redballoonconstruction.com</a>
+              </div>
+              <div class="contact-point">
+                <small>Phone</small>
+                Add your phone number here
+              </div>
+              <div class="contact-point">
+                <small>Coverage</small>
+                Kent to London
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-box">
+            <h3>What you can use this section for</h3>
+            <p>
+              Right now this is a clean placeholder panel. Later, we can turn it into a full contact form, add project enquiry fields,
+              or include your office address and social links.
+            </p>
+            <ul>
+              <li>Add your real phone number</li>
+              <li>Add a quote request form</li>
+              <li>Add project photos</li>
+              <li>Create separate About and Services pages later</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>© 2026 Red Balloon Construction. All rights reserved.</div>
+      <div>Commercial construction services across Kent to London.</div>
+    </div>
+  </footer>
 </body>
 </html>
