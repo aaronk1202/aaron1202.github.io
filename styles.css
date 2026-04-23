@@ -5,7 +5,7 @@
   --muted: #66707c;
   --bg: #f3f3f5;
   --panel: #ffffff;
-  --line: #e7e8ec;
+  --line: #e5e7eb;
   --radius: 18px;
   --shadow: 0 10px 28px rgba(0,0,0,.06);
   --max: 1180px;
@@ -32,13 +32,13 @@ a { color: inherit; text-decoration: none; }
   backdrop-filter: blur(8px);
 }
 .header-wrap {
-  min-height: 102px;
+  min-height: 108px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
 }
-.brand img { width: 280px; max-width: 100%; height: auto; }
+.brand img { width: 360px; max-width: 100%; height: auto; }
 
 .nav {
   display: flex;
@@ -67,7 +67,7 @@ a { color: inherit; text-decoration: none; }
   box-shadow: var(--shadow);
 }
 .hero-copy {
-  padding: 54px 54px;
+  padding: 56px 54px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,7 +83,7 @@ a { color: inherit; text-decoration: none; }
 }
 .hero-copy h1 {
   margin: 0;
-  font-size: clamp(2rem, 4.8vw, 4.15rem);
+  font-size: clamp(2rem, 4.6vw, 3.9rem);
   line-height: .98;
   letter-spacing: -.03em;
   text-transform: uppercase;
@@ -102,10 +102,10 @@ a { color: inherit; text-decoration: none; }
 .btn-secondary { background: white; color: var(--brand-red); }
 
 .hero-image {
-  min-height: 420px;
+  min-height: 430px;
   background:
-    linear-gradient(rgba(255,255,255,.02), rgba(255,255,255,.02)),
-    url('images/building.png') center/cover;
+    linear-gradient(90deg, rgba(255,255,255,.08), rgba(255,255,255,0)),
+    url('images/van.png') center/cover;
 }
 
 .section { padding: 24px 0 56px; }
@@ -127,21 +127,37 @@ a { color: inherit; text-decoration: none; }
 .tile::before {
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.78) 55%, rgba(255,255,255,.18) 100%);
+  background: linear-gradient(90deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.80) 55%, rgba(255,255,255,.20) 100%);
 }
-.tile.red::before {
-  background: linear-gradient(90deg, rgba(214,64,53,.94) 0%, rgba(214,64,53,.82) 55%, rgba(214,64,53,.18) 100%);
-}
-.tile-content { position: relative; z-index: 1; max-width: 320px; }
+.tile-content { position: relative; z-index: 1; max-width: 330px; }
 .tile h2 {
   margin: 0 0 10px;
-  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+  font-size: clamp(1.6rem, 2.2vw, 2.25rem);
   line-height: 1;
   text-transform: uppercase;
 }
 .tile p { margin: 0 0 18px; font-size: 1rem; }
-.tile.construction { background: url('images/Use this is building and not electrical.jpg') center/cover; }
-.tile.fire { background: url('images/Cable FS.png') center/cover; color: white; }
+.tile.construction {
+  background:
+    linear-gradient(90deg, rgba(25,29,36,.76) 0%, rgba(25,29,36,.18) 65%, rgba(25,29,36,.04) 100%),
+    url('images/Paint decorating.png') center/cover;
+  color: white;
+}
+.tile.construction::before {
+  background: linear-gradient(90deg, rgba(25,29,36,.72) 0%, rgba(25,29,36,.45) 50%, rgba(25,29,36,.12) 100%);
+}
+.tile.construction .btn-secondary {
+  border-color: white;
+  color: white;
+  background: transparent;
+}
+.tile.fire {
+  background:
+    linear-gradient(90deg, rgba(214,64,53,.92) 0%, rgba(214,64,53,.74) 55%, rgba(214,64,53,.16) 100%),
+    url('images/Cable FS 1.png') center/cover;
+  color: white;
+}
+.tile.fire::before { background: transparent; }
 .tile.fire .btn-secondary { border-color: white; color: var(--brand-red); }
 
 .values-strip {
@@ -176,13 +192,14 @@ a { color: inherit; text-decoration: none; }
 
 .about-section { padding: 56px 0; }
 .section-heading { text-align: center; margin-bottom: 26px; }
+.section-heading h1,
 .section-heading h2 {
   margin: 0 0 10px;
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   text-transform: uppercase;
   letter-spacing: -.02em;
 }
-.section-heading p { margin: 0 auto; max-width: 760px; color: var(--muted); }
+.section-heading p { margin: 0 auto; max-width: 820px; color: var(--muted); }
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -212,25 +229,15 @@ a { color: inherit; text-decoration: none; }
   font-weight: 700;
 }
 
-.filler {
-  background: white;
-  border-radius: 20px;
-  box-shadow: var(--shadow);
-  padding: 26px 30px;
-  margin-top: 18px;
-}
-.filler h3 { margin: 0 0 10px; text-transform: uppercase; font-size: 1.2rem; }
-.filler p { margin: 0; color: var(--muted); }
-
 .logo-section {
   background: #f7f7f8;
   border-top: 1px solid rgba(0,0,0,.05);
   border-bottom: 1px solid rgba(0,0,0,.05);
-  padding: 48px 0;
+  padding: 28px 0;
 }
 .logo-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 18px;
   align-items: stretch;
 }
@@ -259,7 +266,7 @@ a { color: inherit; text-decoration: none; }
 
 .two-col {
   display: grid;
-  grid-template-columns: .95fr 1.05fr;
+  grid-template-columns: .78fr 1.22fr;
   gap: 18px;
   align-items: start;
 }
@@ -269,14 +276,14 @@ a { color: inherit; text-decoration: none; }
   box-shadow: var(--shadow);
   overflow: hidden;
 }
-.gallery-main img { width: 100%; height: 320px; object-fit: cover; }
+.gallery-main img { width: 100%; height: 330px; object-fit: cover; }
 .thumb-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4px;
   padding: 4px;
 }
-.thumb-grid img { width: 100%; height: 145px; object-fit: cover; }
+.thumb-grid img { width: 100%; height: 150px; object-fit: cover; }
 
 .service-grid {
   display: grid;
@@ -284,17 +291,30 @@ a { color: inherit; text-decoration: none; }
   gap: 14px;
 }
 .service-box {
-  background: linear-gradient(180deg, #fafafa, #f1f2f5);
-  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
   border-radius: 16px;
   padding: 18px 18px 16px;
+  min-height: 178px;
+  color: white;
+  border: 1px solid rgba(255,255,255,.18);
+}
+.service-box.dark {
+  background:
+    linear-gradient(90deg, rgba(27,32,40,.90) 0%, rgba(27,32,40,.64) 58%, rgba(27,32,40,.22) 100%),
+    url('images/Paint decorating.png') center/cover;
+}
+.service-box.red {
+  background:
+    linear-gradient(90deg, rgba(214,64,53,.92) 0%, rgba(214,64,53,.76) 58%, rgba(214,64,53,.24) 100%),
+    url('images/Cable FS 1.png') center/cover;
 }
 .service-box h3 {
   margin: 0 0 10px;
-  font-size: 1.12rem;
+  font-size: 1.08rem;
   text-transform: uppercase;
 }
-.service-box ul { margin: 0; padding-left: 18px; color: #454d59; }
+.service-box ul { margin: 0; padding-left: 18px; color: rgba(255,255,255,.96); font-size: .95rem; }
 .service-box li { margin-bottom: 6px; }
 
 .bottom-note {
