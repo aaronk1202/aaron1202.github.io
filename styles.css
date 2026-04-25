@@ -366,3 +366,97 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* v10 brand colour refinement */
+:root {
+  --logo-grey: #7f858d;
+  --logo-grey-dark: #5f656d;
+  --logo-grey-soft: #aeb3ba;
+  --logo-red: #cf2f28;
+}
+
+.brand img {
+  width: 410px !important;
+}
+
+.header-wrap {
+  min-height: 118px !important;
+}
+
+.nav {
+  font-size: 1.05rem !important;
+  font-weight: 800;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+.nav a {
+  padding: 10px 0;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--logo-red);
+}
+
+.nav a.active::after {
+  height: 4px;
+  bottom: -12px;
+  background: var(--logo-red);
+}
+
+.tile.construction {
+  background:
+    linear-gradient(90deg, rgba(95,101,109,.92), rgba(127,133,141,.74), rgba(174,179,186,.22)),
+    url('images/Paint decorating.png') center/cover !important;
+}
+
+.tile.fire {
+  background:
+    linear-gradient(90deg, rgba(207,47,40,.95), rgba(207,47,40,.78), rgba(207,47,40,.20)),
+    url('images/Cable FS 1.png') center/cover !important;
+}
+
+.service-box.dark {
+  background:
+    linear-gradient(90deg, rgba(95,101,109,.94), rgba(127,133,141,.76), rgba(174,179,186,.26)),
+    var(--box-image, url('images/Paint decorating.png')) center/cover !important;
+}
+
+.service-box.red {
+  background:
+    linear-gradient(90deg, rgba(207,47,40,.96), rgba(207,47,40,.78), rgba(207,47,40,.26)),
+    var(--box-image, url('images/Cable FS 1.png')) center/cover !important;
+}
+
+.personal-card {
+  margin-top: 18px;
+  background:
+    linear-gradient(135deg, rgba(207,47,40,.96), rgba(150,34,30,.96)),
+    radial-gradient(circle at top right, rgba(255,255,255,.22), transparent 40%);
+  color: white;
+  border-radius: 22px;
+  box-shadow: 0 14px 30px rgba(207,47,40,.18);
+  padding: 28px 30px;
+}
+
+.personal-card h2 {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.personal-card p {
+  margin: 0;
+  color: rgba(255,255,255,.9);
+}
+
+@media (max-width: 760px) {
+  .brand img {
+    width: 340px !important;
+  }
+
+  .nav {
+    font-size: .95rem !important;
+  }
+}
