@@ -11,3 +11,97 @@
 .two-col{display:grid;grid-template-columns:.78fr 1.22fr;gap:18px;align-items:start}.gallery-card,.content-card,.contact-card{background:#fff;border-radius:20px;box-shadow:var(--shadow);overflow:hidden}.gallery-main img{width:100%;height:330px;object-fit:cover}.thumb-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px}.thumb-grid img{width:100%;height:150px;object-fit:cover}.service-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.service-box{border-radius:16px;padding:18px;min-height:178px;color:#fff;overflow:hidden}.service-box.dark{background:linear-gradient(90deg,rgba(27,32,40,.90),rgba(27,32,40,.64),rgba(27,32,40,.22)),var(--box-image,url('images/Paint decorating.png')) center/cover}.service-box.red{background:linear-gradient(90deg,rgba(214,64,53,.92),rgba(214,64,53,.76),rgba(214,64,53,.24)),var(--box-image,url('images/Cable FS 1.png')) center/cover}.service-box h3{margin:0 0 10px;font-size:1.08rem;text-transform:uppercase}.service-box ul{margin:0;padding-left:18px;color:rgba(255,255,255,.96);font-size:.95rem}.service-box li{margin-bottom:6px}.bottom-note{text-align:center;color:var(--muted);margin-top:22px}
 .contact-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}.contact-card{padding:28px}.contact-card h2{text-transform:uppercase;margin-top:0}.contact-info{display:grid;gap:12px;margin-top:18px}.info{border:1px solid var(--line);background:#f7f7f9;border-radius:14px;padding:14px 16px}.info strong{display:block;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}form{display:grid;gap:14px}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:block;margin-bottom:7px;font-weight:600}input,textarea{width:100%;border:1px solid #d8dbe2;border-radius:12px;padding:14px;font:inherit}textarea{min-height:170px;resize:vertical}.site-footer{background:#171b23;color:rgba(255,255,255,.76);padding:20px 0;margin-top:36px;font-size:.92rem}.footer-wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media(max-width:980px){.hero-banner,.panel-row,.about-grid,.two-col,.contact-layout,.field-row{grid-template-columns:1fr}.logo-band,.values-grid,.cert-grid{grid-template-columns:repeat(2,1fr)}.service-grid{grid-template-columns:1fr}.value-item{border-right:0;border-bottom:1px solid #d7d8de}}@media(max-width:760px){.header-wrap{flex-direction:column;align-items:flex-start}.brand img{width:300px}.nav{gap:16px}.hero-copy{padding:34px 26px}.logo-band,.values-grid,.cert-grid{grid-template-columns:1fr}}
+
+
+/* v7 visual polish */
+body {
+  background:
+    radial-gradient(circle at top left, rgba(214,64,53,.08), transparent 32%),
+    linear-gradient(180deg, #f7f7f9 0%, #eeeeF2 100%);
+}
+
+.hero-banner,
+.about-card,
+.contact-card,
+.gallery-card,
+.content-card {
+  border: 1px solid rgba(214,64,53,.08);
+}
+
+.hero-copy h1 {
+  font-size: clamp(1.75rem, 3.6vw, 3.2rem) !important;
+  line-height: 1.04 !important;
+}
+
+.hero-copy {
+  background: linear-gradient(135deg, rgba(255,255,255,1), rgba(255,246,245,.92));
+}
+
+.btn-primary {
+  box-shadow: 0 10px 22px rgba(214,64,53,.24);
+}
+
+.btn-secondary {
+  box-shadow: 0 8px 18px rgba(31,36,48,.06);
+}
+
+.tile {
+  border: 1px solid rgba(255,255,255,.20);
+}
+
+.tile.construction {
+  background:
+    linear-gradient(90deg, rgba(18,22,30,.88), rgba(31,36,48,.58), rgba(31,36,48,.16)),
+    url('images/Paint decorating.png') center/cover !important;
+}
+
+.tile.fire {
+  background:
+    linear-gradient(90deg, rgba(214,64,53,.96), rgba(214,64,53,.78), rgba(214,64,53,.18)),
+    url('images/Cable FS 1.png') center/cover !important;
+}
+
+.value-icon {
+  background: linear-gradient(135deg, rgba(214,64,53,.14), rgba(214,64,53,.04));
+  box-shadow: inset 0 0 0 1px rgba(214,64,53,.12);
+}
+
+.value-item h3 {
+  color: #252b36;
+}
+
+.logo-band {
+  border: 1px solid rgba(214,64,53,.08);
+  background: linear-gradient(135deg, #ffffff, #fbfbfc);
+}
+
+.service-box.dark {
+  background:
+    linear-gradient(90deg, rgba(17,21,28,.92), rgba(31,36,48,.68), rgba(31,36,48,.25)),
+    var(--box-image, url('images/Paint decorating.png')) center/cover !important;
+}
+
+.service-box.red {
+  background:
+    linear-gradient(90deg, rgba(214,64,53,.96), rgba(214,64,53,.78), rgba(214,64,53,.26)),
+    var(--box-image, url('images/Cable FS 1.png')) center/cover !important;
+}
+
+.cert-note,
+.expect-item,
+.info {
+  background: linear-gradient(135deg, #ffffff, #f6f6f8);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--red);
+  box-shadow: 0 0 0 4px rgba(214,64,53,.12);
+}
+
+@media (max-width: 760px) {
+  .hero-copy h1 {
+    font-size: clamp(1.65rem, 9vw, 2.35rem) !important;
+  }
+}
