@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Construction | Red Balloon Construction</title><link rel="stylesheet" href="styles.css"></head><body>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Commercial Construction Services Kent to London | Red Balloon Construction</title><link rel="stylesheet" href="styles.css">  <meta name="description" content="Commercial construction, carpentry, refurbishment, maintenance, high level works and multi-trade support across Kent to London.">
+  <meta name="keywords" content="commercial construction Kent, carpentry Kent, building maintenance London, refurbishment Kent">
+</head><body>
 <header class="site-header"><div class="container header-wrap"><a href="index.html" class="brand"><img src="images/Headed Logo.png" alt="Red Balloon Construction logo"></a><nav class="nav"><a href="index.html" class="">Home</a><a href="about.html" class="">About Us</a><a href="construction.html" class="active">Construction</a><a href="fire-protection.html" class="">Passive Fire Protection</a><a href="contact.html" class="">Contact Us</a></nav></div></header>
 
 <main><section class="page-intro"><div class="container"><h1>Construction Services</h1><p>Our team has years of formal experience and training, holding CSCS accreditation and IPAF certification for external works and working at height.</p></div></section><section class="section" style="padding-top:10px"><div class="container"><div class="two-col"><div class="gallery-card"><div class="gallery-main"><img src="images/Paint decorating.png" alt="Construction project image"></div><div class="thumb-grid"><img src="images/Plastering.png"><img src="images/Tiling.jpeg"><img src="images/Plumbing.png"><img src="images/Mewp high level works.png"></div></div><div class="content-card" style="padding:18px"><div class="service-grid">
@@ -21,4 +23,41 @@
 <img src="images/Envirograf_Logo.jpg.png" alt="Envirograf logo">
 </div></div></section></main>
 <footer class="site-footer"><div class="container footer-wrap"><div>© 2026 Red Balloon Construction. All rights reserved.</div><div>Commercial construction and passive fire protection across Kent to London.</div></div></footer>
+
+<div class="quick-links" aria-label="Quick contact links">
+  <a href="contact.html" title="Request a quote">✉</a>
+  <a href="mailto:info@redballoonconstruction.com" title="Email Red Balloon Construction">@</a>
+</div>
+
+<script>
+  const revealItems = document.querySelectorAll('.reveal, .tile, .value-item, .service-box, .about-card, .contact-card, .logo-band');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('is-visible');
+    });
+  }, { threshold: 0.12 });
+  revealItems.forEach(item => {
+    item.classList.add('reveal');
+    observer.observe(item);
+  });
+
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq-answer').style.maxHeight = null;
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
 </body></html>
