@@ -460,3 +460,9 @@ textarea:focus {
     font-size: .95rem !important;
   }
 }
+
+.expect-grid{display:grid;gap:14px;margin-top:16px}
+.expect-card{background:linear-gradient(135deg,#ffffff,#f5f5f7);border:1px solid rgba(0,0,0,0.05);border-left:4px solid var(--logo-red);border-radius:14px;padding:16px 18px;transition:all .25s ease}
+.expect-card h3{margin:0 0 6px;font-size:.95rem;text-transform:uppercase;letter-spacing:.05em;color:#2a2f38}
+.expect-card p{margin:0;font-size:.95rem;color:var(--muted)}
+.expect-card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,.08);border-left:4px solid var(--logo-grey)}
