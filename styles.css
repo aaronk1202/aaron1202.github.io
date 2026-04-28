@@ -510,3 +510,124 @@ textarea:focus {
 .tile .btn{margin:0 auto}
 .tile.construction{background:linear-gradient(90deg,rgba(95,101,109,.92),rgba(127,133,141,.74),rgba(174,179,186,.22)),url('images/Carpentry 1.png') center/cover!important}
 @media(max-width:760px){.brand img{width:360px!important}.header-wrap{min-height:130px!important}.hero-copy h1{font-size:clamp(1.35rem,7vw,2rem)!important}}
+
+
+/* v16 Option C header style */
+.header-wrap {
+  min-height: 150px !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 18px !important;
+  padding: 18px 0 16px !important;
+}
+
+.brand img {
+  width: 470px !important;
+  margin: 0 auto !important;
+}
+
+.nav {
+  width: 100% !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0 !important;
+  white-space: nowrap !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.nav a {
+  position: relative;
+  padding: 8px 34px !important;
+  color: #4f5663 !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.2;
+}
+
+.nav a:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 1px;
+  height: 22px;
+  background: rgba(127, 133, 141, 0.38);
+  transform: translateY(-50%);
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--logo-red, #cf2f28) !important;
+}
+
+.nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 34px !important;
+  right: 34px !important;
+  bottom: -14px !important;
+  height: 3px !important;
+  border-radius: 999px;
+  background: var(--logo-red, #cf2f28) !important;
+}
+
+.mobile-menu-toggle {
+  margin-top: 4px;
+}
+
+@media (max-width: 1100px) {
+  .nav a {
+    padding: 8px 22px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .nav a.active::after {
+    left: 22px !important;
+    right: 22px !important;
+  }
+}
+
+@media (max-width: 820px) {
+  .header-wrap {
+    min-height: 132px !important;
+    gap: 10px !important;
+  }
+
+  .brand img {
+    width: 350px !important;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex !important;
+  }
+
+  .nav {
+    display: none !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    white-space: normal !important;
+  }
+
+  .nav.open {
+    display: flex !important;
+  }
+
+  .nav a {
+    padding: 10px 16px !important;
+  }
+
+  .nav a:not(:last-child)::before {
+    display: none !important;
+  }
+
+  .nav a.active::after {
+    left: 16px !important;
+    right: 16px !important;
+    bottom: -3px !important;
+  }
+}
