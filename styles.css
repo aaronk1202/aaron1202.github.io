@@ -1013,3 +1013,120 @@ textarea:focus {
     display: none !important;
   }
 }
+
+
+/* v24 header balloon position + hero colour split */
+
+/* Push generated balloons further out from the logo area */
+.header-balloons {
+  background-size: min(116vw, 1450px) auto !important;
+  background-position: center 0px !important;
+}
+
+/* Give the hero one overall box, but with a clear premium left/right divide */
+.hero-banner {
+  position: relative !important;
+  overflow: hidden !important;
+  background:
+    linear-gradient(
+      90deg,
+      #fffafa 0%,
+      #fffafa 49.8%,
+      rgba(127,133,141,.10) 49.9%,
+      rgba(127,133,141,.10) 50.1%,
+      #ffffff 50.2%,
+      #ffffff 100%
+    ) !important;
+  border: 1px solid rgba(207,47,40,.12) !important;
+}
+
+/* Restore tasteful red flow only on the van/right side */
+.hero-banner::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 52%,
+      rgba(207,47,40,.035) 53%,
+      rgba(207,47,40,.075) 76%,
+      rgba(207,47,40,.12) 100%
+    ),
+    repeating-linear-gradient(
+      135deg,
+      transparent 0px,
+      transparent 13px,
+      rgba(207,47,40,.025) 14px,
+      transparent 15px
+    ) !important;
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+.hero-banner::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 50% !important;
+  width: 1px !important;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(127,133,141,.16),
+    transparent
+  ) !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+/* Keep content above colour split */
+.hero-copy,
+.hero-image,
+.hero-actions,
+.hero-copy h1 {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Left side has very light warmth, right side keeps van clean but not flat */
+.hero-copy {
+  background:
+    radial-gradient(circle at 10% 20%, rgba(207,47,40,.035), transparent 34%),
+    linear-gradient(135deg, #ffffff 0%, #fff8f7 100%) !important;
+  border-radius: 0 !important;
+}
+
+.hero-image {
+  background:
+    radial-gradient(circle at 78% 58%, rgba(207,47,40,.06), transparent 34%),
+    url('images/van.png') center/contain no-repeat !important;
+  background-color: #ffffff !important;
+  border-radius: 0 !important;
+}
+
+/* Slightly stronger outer hero definition */
+.page-hero .hero-banner {
+  box-shadow: 0 22px 48px rgba(31,36,48,.09) !important;
+}
+
+/* On mobile, remove the hard split so it stacks cleanly */
+@media (max-width: 760px) {
+  .hero-banner {
+    background: #ffffff !important;
+  }
+
+  .hero-banner::before,
+  .hero-banner::after {
+    display: none !important;
+  }
+
+  .hero-copy {
+    background: linear-gradient(135deg, #ffffff 0%, #fff8f7 100%) !important;
+  }
+}
