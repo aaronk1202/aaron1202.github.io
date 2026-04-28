@@ -1,7 +1,7 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>About Red Balloon Construction | Commercial Contractor Kent to London</title><link rel="stylesheet" href="styles.css">  <meta name="description" content="About Red Balloon Construction, a multi-discipline commercial contractor supporting construction, maintenance and passive fire protection across Kent to London.">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>About Red Balloon Construction | Commercial Contractor the South East and Greater London</title><link rel="stylesheet" href="styles.css">  <meta name="description" content="About Red Balloon Construction, a multi-discipline commercial contractor supporting construction, maintenance and passive fire protection across the South East and Greater London.">
   <meta name="keywords" content="about Red Balloon Construction, commercial contractor Kent, facilities maintenance London">
 </head><body>
-<header class="site-header"><div class="container header-wrap"><a href="index.html" class="brand"><img src="images/Headed Logo.png" alt="Red Balloon Construction logo"></a><nav class="nav"><a href="index.html" class="">Home</a><a href="about.html" class="active">About Us</a><a href="construction.html" class="">Construction</a><a href="fire-protection.html" class="">Passive Fire Protection</a><a href="contact.html" class="">Contact Us</a></nav></div></header>
+<header class="site-header"><div class="container header-wrap"><a href="index.html" class="brand"><img src="images/Headed Logo.png" alt="Red Balloon Construction logo"></a><button class="mobile-menu-toggle" type="button" aria-label="Toggle menu">Menu ☰</button><nav class="nav"><a href="index.html" class="">Home</a><a href="about.html" class="active">About Us</a><a href="construction.html" class="">Construction</a><a href="fire-protection.html" class="">Fire Protection</a><a href="contact.html" class="">Contact Us</a></nav></div></header>
 
 
 
@@ -42,7 +42,7 @@
   </div>
   <div class="expect-card">
     <h3>Regional Coverage</h3>
-    <p>Kent, London and surrounding areas.</p>
+    <p>the South East and Greater London.</p>
   </div>
 </div>
           <div class="expect-item"></div>
@@ -53,31 +53,18 @@
       </div>
     </div>
 
-    <div class="about-plus-grid">
-      <div class="about-card">
-        <h2 style="margin-top:0">Common Questions</h2>
-        <div class="faq-mini-grid">
-          <div class="faq-item">
-            <button class="faq-question" type="button">Do you work across live commercial sites?<span>+</span></button>
-            <div class="faq-answer"><p>Yes. We regularly support commercial and education environments where planning, communication and minimal disruption are important.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" type="button">Do you cover both construction and passive fire protection?<span>+</span></button>
-            <div class="faq-answer"><p>Yes. We provide multi-trade construction support alongside passive fire protection services including fire stopping, fire doors and damper-related works.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" type="button">What areas do you cover?<span>+</span></button>
-            <div class="faq-answer"><p>We support clients across Kent, Greater London and surrounding areas.</p></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="map-card reveal">
-        <h2>Working Area</h2>
-        <p>Supporting commercial clients across Kent, Greater London and surrounding areas.</p>
-        <img src="area-map.svg" alt="Working area map showing Kent to London">
-      </div>
+    
+<div class="about-plus-grid">
+  <div class="about-card" style="grid-column: 1 / -1;">
+    <h2 style="margin-top:0">Common Questions</h2>
+    <div class="faq-mini-grid">
+      <div class="faq-item"><button class="faq-question" type="button">What is passive fire protection and what services do you offer?<span>+</span></button><div class="faq-answer"><p>Passive fire protection helps protect buildings by maintaining fire separation and compartmentation. Our services include fire stopping around service penetrations, fire door and frame works, fire damper testing and reporting, and partition/passive fire repairs.</p></div></div>
+      <div class="faq-item"><button class="faq-question" type="button">What areas do you cover?<span>+</span></button><div class="faq-answer"><p>We work across the South East and Greater London, including Kent, London, Canterbury, Maidstone, Ashford, Medway, Dartford, Gravesend, Sevenoaks, Tonbridge, Tunbridge Wells, Bromley, Croydon, Bexley, Greenwich, Lewisham, Surrey and surrounding areas.</p></div></div>
+      <div class="faq-item"><button class="faq-question" type="button">What experience does Red Balloon have?<span>+</span></button><div class="faq-answer"><p>We support commercial clients, universities, schools and facilities management companies with construction, maintenance, high-level works and passive fire protection. Our team is CHAS and SafeContractor approved, holds CSCS Gold, and is supported by BM Trada Q-Mark, IPAF, Hasman and Envirograf certification.</p></div></div>
     </div>
+  </div>
+</div>
+
   </div>
 </section>
 
@@ -92,7 +79,7 @@
 </main>
 
 
-<footer class="site-footer"><div class="container footer-wrap"><div>© 2026 Red Balloon Construction. All rights reserved.</div><div>Commercial construction and passive fire protection across Kent to London.</div></div></footer>
+<footer class="site-footer"><div class="container footer-wrap"><div>© 2026 Red Balloon Construction. All rights reserved.</div><div>Commercial construction and passive fire protection across the South East and Greater London.</div></div></footer>
 
 <div class="quick-links" aria-label="Quick contact links">
   <a href="contact.html" title="Request a quote">✉</a>
@@ -128,6 +115,12 @@
       }
     });
   });
+</script>
+
+
+<script>
+document.querySelectorAll('.mobile-menu-toggle').forEach(button=>{button.addEventListener('click',()=>{button.parentElement.querySelector('.nav').classList.toggle('open')})});
+document.querySelectorAll('.flip-card').forEach(card=>{card.setAttribute('tabindex','0');card.addEventListener('click',()=>card.classList.toggle('flipped'));card.addEventListener('keypress',e=>{if(e.key==='Enter'||e.key===' ')card.classList.toggle('flipped')})});
 </script>
 
 </body></html>
