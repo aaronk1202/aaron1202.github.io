@@ -1249,3 +1249,43 @@ textarea:focus {
     background: linear-gradient(135deg, #ffffff 0%, #fff8f7 100%) !important;
   }
 }
+
+
+/* v26 remove balloons completely and adjust hero divide */
+.header-balloons,
+.header-balloon,
+.hero-balloons,
+.hero-balloon {
+  display: none !important;
+  background-image: none !important;
+}
+
+/* Move the hero image/divider line left so it aligns better with the lower tile grid */
+.hero-banner {
+  grid-template-columns: 48% 52% !important;
+  background:
+    linear-gradient(
+      90deg,
+      #fff9f8 0%,
+      #fff9f8 48%,
+      #ffffff 48%,
+      #ffffff 100%
+    ) !important;
+}
+
+.hero-banner::after {
+  left: 48% !important;
+}
+
+.hero-copy {
+  padding-right: 34px !important;
+}
+
+.hero-image {
+  background-position: center center !important;
+}
+
+/* Keep header clean once balloons are removed */
+.header-wrap {
+  overflow: visible !important;
+}
