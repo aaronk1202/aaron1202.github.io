@@ -748,3 +748,36 @@ img[src*="cherry-picker-high-level"] {
     width: 360px !important;
   }
 }
+
+
+/* v29 van hero fill correction */
+/* Force the right hero image panel to be filled edge-to-edge with the van image */
+.hero-image {
+  background-image: url('images/van.png') !important;
+  background-size: cover !important;
+  background-position: center 58% !important;
+  background-repeat: no-repeat !important;
+  min-height: 300px !important;
+}
+
+/* Remove any image element inside hero-image if present from layout flow */
+.hero-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 58% !important;
+  display: block !important;
+}
+
+/* Keep hero card aligned with the two service boxes below */
+.hero-banner {
+  grid-template-columns: 1fr 1fr !important;
+  gap: 28px !important;
+}
+
+@media (max-width: 760px) {
+  .hero-image {
+    min-height: 260px !important;
+    background-position: center 58% !important;
+  }
+}
